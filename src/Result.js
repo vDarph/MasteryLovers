@@ -47,7 +47,7 @@ class Result extends Component{
                 />
             )
         }
-        
+
         if (this.props.keyCode == null){
             this.contenutoJSX = null
         }

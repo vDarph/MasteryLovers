@@ -10,5 +10,9 @@
 
 .search{
   margin: 30px 0 0 30px;
-  
+}
+
+.championCard{
+  border: solid 1px #333333;
+  padding: 10px;
 }
