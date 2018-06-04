@@ -5,7 +5,7 @@ import Result from './Result'
 class App extends Component {
   
   state = {
-     key: "RGAPI-d5da6375-7d10-4ba2-bdfc-307a188c1f5d",
+     key: "RGAPI-bb7a6044-d8c2-44e9-8ed6-bbdb7980695a",
      query: "",
       data: {
       accountId: "",
@@ -47,22 +47,16 @@ class App extends Component {
     }
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-4 summoners">
-            <input 
-              className="search"
-              onKeyDown={this.enterPressed.bind(this)}
-              onChange={this.handleKey.bind(this)}
-            />
-            <button ref="btnSearch" onClick={this.handleSearch.bind(this)}> Click </button>
-            <p>{this.state.data.id}</p>
-          </div>
-          <div className="col-md-8 summoners">
-            {resultJSX}
-          </div>
+      <div className="summoners">
+        <input 
+          className="search"
+          onKeyDown={this.enterPressed.bind(this)}
+          onChange={this.handleKey.bind(this)}
+        />
+        <button ref="btnSearch" onClick={this.handleSearch.bind(this)}> Click </button>
+        <p>{this.state.data.id}</p>
+          {resultJSX}
         </div>
-      </div>
     );
   }
 }

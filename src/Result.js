@@ -25,7 +25,7 @@ class Result extends Component{
             + this.props.keyCode;
         fetched = await fetch(endPoint);
         let championData = await fetched.json();
-
+        console.log(championData)
         this.setState({
             championData,
             masteryData
@@ -41,16 +41,13 @@ class Result extends Component{
             let championId = personalMasteryData[i].championId;
             ChampionCardJSx.push(
                 <ChampionCard 
-                    masteryData={championId}
-                    championData={this.state.championData[championId]}
+                    championId={championId}
+                    masteryData={personalMasteryData}
+                    championData={this.state.championData.data[championId]}
                 />
             )
-            console.log(championId)
         }
-
         
-
-
         if (this.props.keyCode == null){
             this.contenutoJSX = null
         }
