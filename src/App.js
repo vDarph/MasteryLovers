@@ -5,7 +5,7 @@ import Result from './Result'
 class App extends Component {
   
   state = {
-     key: "RGAPI-b1ea7dbc-ee31-4be0-99aa-ebe684280793",
+     key: "RGAPI-a656a11d-14c0-4cd5-b1c4-9a7bd57eada6",
      query: "",
       data: {
       accountId: "",
@@ -24,6 +24,7 @@ class App extends Component {
     this.setState({
       data: data
     });
+    console.log("this are summoner data", data)
   }
 
   handleKey(event) {
@@ -43,20 +44,32 @@ class App extends Component {
   render() {
     let resultJSX = null
     if (this.state.data.id !== ""){
-      resultJSX = <Result keyCode={this.state.key} summonerData={this.state.data}/>
+      resultJSX = 
+        <Result 
+          keyCode={this.state.key} 
+          summonerData={this.state.data}
+        />
     }
 
     return (
       <div className="summoners">
-        <input 
-          className="search"
-          onKeyDown={this.enterPressed.bind(this)}
-          onChange={this.handleKey.bind(this)}
-        />
-        <button ref="btnSearch" onClick={this.handleSearch.bind(this)}> Click </button>
-        <p>{this.state.data.id}</p>
+        <form
+          className="search-form">
+          <input 
+            className="search-form_input"
+            placeholder="Submit a Summoner Name..."
+            onKeyDown={this.enterPressed.bind(this)}
+            onChange={this.handleKey.bind(this)}
+          />
+          <button 
+            ref="btnSearch"
+            className="search-form_button"
+            onClick={this.handleSearch.bind(this)}> 
+            CLICK
+          </button>
+        </form>
           {resultJSX}
-        </div>
+      </div>
     );
   }
 }

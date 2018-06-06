@@ -1,6 +1,7 @@
 .summoners {
-  background-color: bisque;
+  background-color: #141414;
   height: 100vh;
+  position: relative;
 }
 
 .champions{
@@ -8,8 +9,34 @@
   height: 100vh;
 }
 
-.search{
-  margin: 30px 0 0 30px;
+.search-form{
+  width: 600px;
+  height: 50px;
+  position: relative; 
+  margin: 0 auto;
+}
+
+.search-form_input{
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 15px 150px 18px 17px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-form_button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin: 10px 10px;
+  background-color: #E2001A;
+  color: #FFF
 }
 
 .championCard{
