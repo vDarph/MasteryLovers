@@ -5,7 +5,7 @@ import Result from './Result'
 class App extends Component {
   
   state = {
-     key: "RGAPI-a656a11d-14c0-4cd5-b1c4-9a7bd57eada6",
+     key: "RGAPI-598b98cf-61d3-4a0f-ba7b-f96c0bfda25a",
      query: "",
       data: {
       accountId: "",
@@ -54,7 +54,7 @@ class App extends Component {
 
     return (
       <div className="summoners">
-        
+        <div className="search-form">
           <input 
             className="search-form_input"
             placeholder="Submit a Summoner Name..."
@@ -67,8 +67,8 @@ class App extends Component {
             onClick={this.handleSearch.bind(this)}> 
             CLICK
           </button>
-        
-          {resultJSX}
+        </div>
+        {resultJSX}
       </div>
     );
   }
