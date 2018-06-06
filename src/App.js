@@ -32,6 +32,7 @@ class App extends Component {
       this.setState({
         query: searched
       });
+      console.log(searched)
   }
 
   enterPressed(event) {
@@ -53,8 +54,7 @@ class App extends Component {
 
     return (
       <div className="summoners">
-        <form
-          className="search-form">
+        
           <input 
             className="search-form_input"
             placeholder="Submit a Summoner Name..."
@@ -67,7 +67,7 @@ class App extends Component {
             onClick={this.handleSearch.bind(this)}> 
             CLICK
           </button>
-        </form>
+        
           {resultJSX}
       </div>
     );
