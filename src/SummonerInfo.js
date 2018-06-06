@@ -24,10 +24,12 @@ class SummonerInfo extends Component{
 
         return(
             <div className="summonerInfo">
-                <img src={profileIcon} className="championImg" alt="" />
-                <span className="profileInfo">{this.state.totalMasteryInt}</span>
-                <span className="profileInfo">{this.props.summonerData.summonerLevel}</span>
-                <span className="profileInfo">{this.props.summonerData.name}</span>
+                <div className="profileIcon-container">
+                    <img src={profileIcon} className="championImg" alt="" />
+                </div>
+                <p className="profileInfo">{this.props.summonerData.summonerLevel}</p>
+                <p className="profileInfo">{this.props.summonerData.name}</p>
+                <p className="profileInfo">TOTAL MASTERY SCORE: {this.state.totalMasteryInt}</p>
             </div>
         )
     }

@@ -63,11 +63,14 @@ class Result extends Component{
                     summonerData={this.props.summonerData}
                     keyCode={this.props.keyCode}
                 />
-                <Masonry
-                    elementType={'ul'}
-                >
-                    {ChampionCardJSX}
-                </Masonry>
+                <div className="resultGrid">
+                    <Masonry
+                        elementType={'ul'}
+                        columnWidth= "30%"
+                    >
+                        {ChampionCardJSX}
+                    </Masonry>
+                </div>
             </div>
         )
     }
