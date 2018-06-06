@@ -5,7 +5,7 @@ import Result from './Result'
 class App extends Component {
   
   state = {
-     key: "RGAPI-598b98cf-61d3-4a0f-ba7b-f96c0bfda25a",
+     keyCode: "RGAPI-598b98cf-61d3-4a0f-ba7b-f96c0bfda25a",
      query: "",
       data: {
       accountId: "",
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   async handleSearch(){
-    const endPoint = "https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/" + this.state.query + "?api_key=" + this.state.key;
+    const endPoint = "https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/" + this.state.query + "?api_key=" + this.state.keyCode;
     const fetched = await fetch(endPoint);
     const data = await fetched.json();
     this.setState({
@@ -47,7 +47,7 @@ class App extends Component {
     if (this.state.data.id !== ""){
       resultJSX = 
         <Result 
-          keyCode={this.state.key} 
+          keyCode={this.state.keyCode} 
           summonerData={this.state.data}
         />
     }

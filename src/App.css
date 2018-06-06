@@ -13,6 +13,8 @@
   height: 50px;
   position: relative; 
   margin: 0 auto;
+  margin-bottom: 20px;
+
 }
 
 .search-form_input{
@@ -49,7 +51,22 @@
 }
 
 .summonerInfo{
-  color: #FFF
+  color: #FFF;
+  padding: 20px 0;
+  border-top: 1px solid #f6c97f;
+  border-bottom: 1px solid #f6c97f;
+  margin: 0 auto;
+}
+
+.championImg{
+  margin: 0 auto;
+  width: 100px;
+  display: block;
+}
+
+.profileInfo{
+  margin: 0 15px 20px 0;
+  text-align: center;
 }
 
 /* Medium devices (tablets, 768px and up) */

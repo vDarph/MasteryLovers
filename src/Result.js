@@ -38,8 +38,6 @@ class Result extends Component{
     
     render(){
 
-        console.log(this.state.masteryData)
-
         let ChampionCardJSX = []
         let personalMasteryData = this.state.masteryData
         for(let i = 0; i < personalMasteryData.length; i++){
@@ -54,13 +52,16 @@ class Result extends Component{
         }
 
         if (this.props.keyCode == null){
-            this.contenutoJSX = null
+            this.contenutoJSX = null;
+            this.SummonerInfo = null
         }
+
 
         return(
             <div className="results">
                 <SummonerInfo 
                     summonerData={this.props.summonerData}
+                    keyCode={this.props.keyCode}
                 />
                 <Masonry
                     elementType={'ul'}
