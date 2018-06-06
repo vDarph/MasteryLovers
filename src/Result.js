@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Masonry from 'react-masonry-component';
 import ChampionCard from './ChampionCard'
 import SummonerInfo from './SummonerInfo'
 
@@ -12,6 +13,8 @@ class Result extends Component{
     }
 
     async componentWillMount(){
+
+        this.ChampionCardJSX = []
         
         let endPoint = 
             "https://euw1.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/" 
@@ -26,7 +29,6 @@ class Result extends Component{
             + this.props.keyCode;
         fetched = await fetch(endPoint);
         let championData = await fetched.json();
-        console.log(championData)
         this.setState({
             championData,
             masteryData
@@ -36,12 +38,13 @@ class Result extends Component{
     
     render(){
 
-        let ChampionCardJSx = []
+        console.log(this.state.masteryData)
+
+        let ChampionCardJSX = []
         let personalMasteryData = this.state.masteryData
-        console.log(personalMasteryData)
         for(let i = 0; i < personalMasteryData.length; i++){
             let championId = personalMasteryData[i].championId;
-            ChampionCardJSx.push(
+            ChampionCardJSX.push(
                 <ChampionCard 
                     championId={championId}
                     masteryData={personalMasteryData[i]}
@@ -55,9 +58,15 @@ class Result extends Component{
         }
 
         return(
-            <div>
-                <SummonerInfo />
-                {ChampionCardJSx}
+            <div className="results">
+                <SummonerInfo 
+                    summonerData={this.props.summonerData}
+                />
+                <Masonry
+                    elementType={'ul'}
+                >
+                    {ChampionCardJSX}
+                </Masonry>
             </div>
         )
     }

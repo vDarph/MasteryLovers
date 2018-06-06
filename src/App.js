@@ -32,7 +32,6 @@ class App extends Component {
       this.setState({
         query: searched
       });
-      console.log(searched)
   }
 
   enterPressed(event) {
@@ -44,6 +43,7 @@ class App extends Component {
   
   render() {
     let resultJSX = null
+
     if (this.state.data.id !== ""){
       resultJSX = 
         <Result 
@@ -64,7 +64,8 @@ class App extends Component {
           <button 
             ref="btnSearch"
             className="search-form_button"
-            onClick={this.handleSearch.bind(this)}> 
+            onClick={this.handleSearch.bind(this)}
+          > 
             CLICK
           </button>
         </div>
