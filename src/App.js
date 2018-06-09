@@ -5,26 +5,31 @@ import Result from './Result'
 class App extends Component {
   
   state = {
-     keyCode: "RGAPI-598b98cf-61d3-4a0f-ba7b-f96c0bfda25a",
-     query: "",
-      data: {
-      accountId: "",
-      id: "",
-      name: "",
-      profileIconId: "",
-      revisionDate: "",
-      summonerLevel: ""
-    }
+      keyCode: "RGAPI-150b02cc-dcd3-42cd-9a5f-4eef5d119633",
+      query: "",
+      summonerData: {
+      id: ""
+      }
+  }
+
+  async componentDidMount(){
+    let endPoint = 
+            "https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&champListData=image&dataById=true&api_key=" 
+            + this.state.keyCode;
+    let fetched = await fetch(endPoint);
+    let championData = await fetched.json();
+    this.setState({
+      championData
+    });
   }
 
   async handleSearch(){
-    const endPoint = "https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/" + this.state.query + "?api_key=" + this.state.keyCode;
-    const fetched = await fetch(endPoint);
-    const data = await fetched.json();
+    let endPoint = "https://euw1.api.riotgames.com/lol/summoner/v3/summoners/by-name/" + this.state.query + "?api_key=" + this.state.keyCode;
+    let fetched = await fetch(endPoint);
+    let summonerData = await fetched.json();
     this.setState({
-      data: data
+      summonerData
     });
-    console.log("this are summoner data", data)
   }
 
   handleKey(event) {
@@ -44,11 +49,12 @@ class App extends Component {
   render() {
     let resultJSX = null
 
-    if (this.state.data.id !== ""){
+    if (this.state.summonerData.id !== ""){
       resultJSX = 
         <Result 
           keyCode={this.state.keyCode} 
-          summonerData={this.state.data}
+          summonerData={this.state.summonerData}
+          championData={this.state.championData}
         />
     }
 
@@ -66,7 +72,7 @@ class App extends Component {
             className="search-form_button"
             onClick={this.handleSearch.bind(this)}
           > 
-            CLICK
+            SEARCH
           </button>
         </div>
         {resultJSX}

@@ -24,13 +24,7 @@ class Result extends Component{
         let fetched = await fetch(endPoint);
         let masteryData = await fetched.json();
 
-        endPoint = 
-            "https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&champListData=image&dataById=true&api_key=" 
-            + this.props.keyCode;
-        fetched = await fetch(endPoint);
-        let championData = await fetched.json();
         this.setState({
-            championData,
             masteryData
         })
       }
@@ -46,7 +40,7 @@ class Result extends Component{
                 <ChampionCard 
                     championId={championId}
                     masteryData={personalMasteryData[i]}
-                    championData={this.state.championData.data[championId]}
+                    championData={this.props.championData.data[championId]}
                 />
             )
         }
@@ -55,6 +49,8 @@ class Result extends Component{
             this.contenutoJSX = null;
             this.SummonerInfo = null
         }
+
+        
 
 
         return(
@@ -66,7 +62,6 @@ class Result extends Component{
                 <div className="resultGrid">
                     <Masonry
                         elementType={'ul'}
-                        columnWidth= "30%"
                     >
                         {ChampionCardJSX}
                     </Masonry>
