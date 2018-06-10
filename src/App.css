@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Beaufort for LOL Bold';
+  src: local('Beaufort for LOL Bold'), url(./Fonts/Beaufort-Bold.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'GillSansMTPro-Book';
+  src: local('GillSansMTPro-Book'), url(./Fonts/GillSansMTPro-Book.otf) format('otf');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -71,10 +81,22 @@
   text-align: center;
 }
 
+.profileInfo_name{
+  font-family: 'Beaufort for LOL Bold';
+  text-align: center;
+  font-size: 32px;
+  color: #f6c97f;
+}
+
 .profileIconContainer{
   margin: 0 auto;
   width: 125px;
   margin-bottom: 50px;
+}
+
+.championCardInfo{
+  position: relative;
+  top: -15px;
 }
 
 .levelStyle{
@@ -91,6 +113,12 @@
   top: -48px;
   left: -48px;
   z-index: 0;
+}
+
+.masteryPoints_icon{
+  background-image: url(%PUBLIC_URL%/Assets/Img/masteryIcon.png);
+  width: 34px;
+  height: 28px;
 }
 
 /* Medium devices (tablets, 768px and up) */

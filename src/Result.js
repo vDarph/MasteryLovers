@@ -13,17 +13,17 @@ class Result extends Component{
     }
 
     async componentWillReceiveProps(nextProps){
-        if (nextProps.summonerData.id !== this.props.summonerData.id){
+        if (nextProps.summonerData.id !== this.props.summonerData.id || this.props.summonerData !== null ){
             this.ChampionCardJSX = []
-            
+  
             let endPoint = 
                 "https://euw1.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/" 
-                + this.props.summonerData.id 
+                + nextProps.summonerData.id 
                 + "?api_key=" 
                 + this.props.keyCode;
             let fetched = await fetch(endPoint);
             let masteryData = await fetched.json();
-
+            console.log(nextProps.summonerData.id)
             this.setState({
                 masteryData
             })
@@ -32,6 +32,7 @@ class Result extends Component{
 
     
     render(){
+       
 
         let ChampionCardJSX = []
         let personalMasteryData = this.state.masteryData
