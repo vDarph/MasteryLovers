@@ -5,7 +5,7 @@ import Result from './Result'
 class App extends Component {
   
   state = {
-      keyCode: "RGAPI-150b02cc-dcd3-42cd-9a5f-4eef5d119633",
+      keyCode: "RGAPI-6082c292-31df-4165-9a93-ae2ad53f4529",
       query: "",
       summonerData: {
       id: ""

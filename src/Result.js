@@ -12,22 +12,23 @@ class Result extends Component{
         }
     }
 
-    async componentWillMount(){
+    async componentWillReceiveProps(nextProps){
+        if (nextProps.summonerData.id !== this.props.summonerData.id){
+            this.ChampionCardJSX = []
+            
+            let endPoint = 
+                "https://euw1.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/" 
+                + this.props.summonerData.id 
+                + "?api_key=" 
+                + this.props.keyCode;
+            let fetched = await fetch(endPoint);
+            let masteryData = await fetched.json();
 
-        this.ChampionCardJSX = []
-        
-        let endPoint = 
-            "https://euw1.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/" 
-            + this.props.summonerData.id 
-            + "?api_key=" 
-            + this.props.keyCode;
-        let fetched = await fetch(endPoint);
-        let masteryData = await fetched.json();
-
-        this.setState({
-            masteryData
-        })
-      }
+            this.setState({
+                masteryData
+            })
+        }
+    }
 
     
     render(){

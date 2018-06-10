@@ -89,27 +89,30 @@ class SummonerInfo extends Component{
                 levelBorder = process.env.PUBLIC_URL + "/Assets/Img/summonerLevel/001.png";
                 break;    
         }
-
-        console.log(levelBorder)
-
+        
         const profileIcon = "http://ddragon.leagueoflegends.com/cdn/8.11.1/img/profileicon/" + this.props.summonerData.profileIconId + ".png"
 
         let profileIconStyle = {
-            backgroundImage: "url(" + profileIcon + "), url(" + levelBorder + ")",
-            backgroundPosition: 'center, center',
-            backgroundRepeat: 'no-repeat, no-repeat',
-            backgroundSize: 'cover',
-            width: '75px',
-            height: '75px'
+            backgroundImage: "url(" + profileIcon + ")",
+            width: '125px',
+            height: '125px',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            borderRadius: "50%",
+            textAlign: 'center'
         };
 
         return(
             <div className="summonerInfo">
-                <div 
-                    className="profileIcon-container"
-                    style={ profileIconStyle }
-                /> 
-                <p className="profileInfo">{this.props.summonerData.summonerLevel}</p>
+                <div className="profileIconContainer">
+                    <div
+                        style={profileIconStyle}
+                    >
+                        <img src={levelBorder} className="levelBorderStyle" />
+                        <p className="levelStyle">{this.props.summonerData.summonerLevel}</p>
+                    </div> 
+                </div>
                 <p className="profileInfo">{this.props.summonerData.name}</p>
                 <p className="profileInfo">TOTAL MASTERY SCORE: {this.state.totalMasteryInt}</p>
             </div>

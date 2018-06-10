@@ -71,6 +71,28 @@
   text-align: center;
 }
 
+.profileIconContainer{
+  margin: 0 auto;
+  width: 125px;
+  margin-bottom: 50px;
+}
+
+.levelStyle{
+  color: white;
+  position: relative;
+  top: -113px;
+  left: -1px;
+  z-index: 1;
+}
+
+.levelBorderStyle{
+  width: 220px;
+  position: relative;
+  top: -48px;
+  left: -48px;
+  z-index: 0;
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) {  
   .summoners{
