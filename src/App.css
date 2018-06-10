@@ -1,17 +1,20 @@
 @font-face {
   font-family: 'Beaufort for LOL Bold';
-  src: local('Beaufort for LOL Bold'), url(./Fonts/Beaufort-Bold.ttf) format('ttf');
+  src: local('Beaufort for LOL Bold') url(./Assets/Fonts/Beaufort-Bold.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'GillSansMTPro-Book';
-  src: local('GillSansMTPro-Book'), url(./Fonts/GillSansMTPro-Book.otf) format('otf');
+  font-family: 'Gill Sans MT Pro';
+  src: local('GillSansMTPro-Book') url(./Assets/Fonts/GillSansMTPro-Book.otf) format('opentype');
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.body{
 }
 
 .summoners {
@@ -26,7 +29,7 @@
   position: relative; 
   margin: 0 auto;
   margin-bottom: 20px;
-
+  font-family: 'Gill Sans MT Pro';
 }
 
 .search-form_input{
@@ -38,6 +41,7 @@
   box-sizing: border-box;
   outline: none;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Gill Sans MT Pro';
 }
 
 .results{
@@ -53,13 +57,17 @@
   padding: 8px 8px;
   margin: 8px 10px;
   background-color: #E2001A;
-  color: #FFF
+  color: #FFF;
+  font-family: 'Gill Sans MT Pro';
+
 }
 
 .championCard{
   text-align: center;
   width: 150px;
-  color: #FFF
+  color: #FFF;
+  font-family: 'Gill Sans MT Pro';
+
 }
 
 .summonerInfo{
@@ -68,6 +76,7 @@
   border-top: 1px solid #f6c97f;
   border-bottom: 1px solid #f6c97f;
   margin: 0 auto;
+  font-family: 'Gill Sans MT Pro';
 }
 
 .championImg{
@@ -102,10 +111,11 @@
 .levelStyle{
   color: white;
   position: relative;
-  top: -113px;
+  top: -114px;
   left: -1px;
   z-index: 1;
 }
+
 
 .levelBorderStyle{
   width: 220px;
@@ -116,19 +126,57 @@
 }
 
 .masteryPoints_icon{
-  background-image: url(%PUBLIC_URL%/Assets/Img/masteryIcon.png);
+  background-image: url(./Assets/Img/masteryIcon.png);
+  display: inline-block;
   width: 34px;
   height: 28px;
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {  
+.masonryGrid {
+  width:400px;
+  margin:0 auto 10px auto;
+  padding:20px;
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .masonryGrid {
+    width:500px;
+    margin:0 auto 20px auto;
+    padding:20px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+  .masonryGrid {
+    width:700px;
+    margin:0 auto 20px auto;
+    padding:20px;
+  }
+
   .summoners{
-  padding-top: 15px;
+    padding-top: 15px;
   }
 
   .search-form{
     width: 600px;
+  } 
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+  .masonryGid {
+    width:950px;
+    margin:0 auto 20px auto;
+    padding:20px;
   }
 }
 
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+  .masonryGrid {
+    width:1180px;
+    margin:0 auto 20px auto;
+    padding:20px;
+  }
+}

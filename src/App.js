@@ -12,7 +12,7 @@ class App extends Component {
       }
   }
 
-  async componentDidMount(){
+  async componentWillMount(){
     let endPoint = 
             "https://euw1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&champListData=image&dataById=true&api_key=" 
             + this.state.keyCode;
@@ -33,10 +33,10 @@ class App extends Component {
   }
 
   handleKey(event) {
-      let searched = event.target.value;
-      this.setState({
-        query: searched
-      });
+    let searched = event.target.value;
+    this.setState({
+      query: searched
+    });
   }
 
   enterPressed(event) {

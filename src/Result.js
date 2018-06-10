@@ -23,7 +23,7 @@ class Result extends Component{
                 + this.props.keyCode;
             let fetched = await fetch(endPoint);
             let masteryData = await fetched.json();
-            console.log(nextProps.summonerData.id)
+
             this.setState({
                 masteryData
             })
@@ -32,10 +32,12 @@ class Result extends Component{
 
     
     render(){
-       
-
+        const grisIsLoaded = { 
+            backgroundColor: '#ABC5FF',
+        }
         let ChampionCardJSX = []
         let personalMasteryData = this.state.masteryData
+        
         for(let i = 0; i < personalMasteryData.length; i++){
             let championId = personalMasteryData[i].championId;
             ChampionCardJSX.push(
@@ -52,9 +54,6 @@ class Result extends Component{
             this.SummonerInfo = null
         }
 
-        
-
-
         return(
             <div className="results">
                 <SummonerInfo 
@@ -64,6 +63,8 @@ class Result extends Component{
                 <div className="resultGrid">
                     <Masonry
                         elementType={'ul'}
+                        className="masonryGrid"
+                        onLayoutComplete={grisIsLoaded}
                     >
                         {ChampionCardJSX}
                     </Masonry>

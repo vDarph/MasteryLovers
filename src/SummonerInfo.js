@@ -18,6 +18,17 @@ class SummonerInfo extends Component{
       }
 
     render(){
+        const profileIcon = "http://ddragon.leagueoflegends.com/cdn/8.11.1/img/profileicon/" + this.props.summonerData.profileIconId + ".png"
+        const profileIconStyle = {
+            backgroundImage: "url(" + profileIcon + ")",
+            width: '125px',
+            height: '125px',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+            borderRadius: "50%",
+            textAlign: 'center'
+        };
         let summonerLevel = this.props.summonerData.summonerLevel
         let levelBorder
 
@@ -89,19 +100,6 @@ class SummonerInfo extends Component{
                 levelBorder = process.env.PUBLIC_URL + "/Assets/Img/summonerLevel/001.png";
                 break;    
         }
-
-        const profileIcon = "http://ddragon.leagueoflegends.com/cdn/8.11.1/img/profileicon/" + this.props.summonerData.profileIconId + ".png"
-
-        let profileIconStyle = {
-            backgroundImage: "url(" + profileIcon + ")",
-            width: '125px',
-            height: '125px',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'contain',
-            borderRadius: "50%",
-            textAlign: 'center'
-        };
 
         return(
             <div className="summonerInfo">
