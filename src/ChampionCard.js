@@ -53,8 +53,11 @@ class ChampionCard extends Component{
                 <div style={levelBannerStyle}>
                     <img src={championImage} className="championImg" alt="" />
                 </div>
-                <p className="championCardInfo">{championData.name}</p>
-                <span className="masteryPoints_icon"></span> <p className="masteryPoints">{this.props.masteryData.championPoints}</p>
+                <div className="championInfo">
+                    <p className="championCardInfo">{championData.name}</p>
+                    <span className="masteryPoints_icon"></span> <p className="masteryPoints">{this.props.masteryData.championPoints}</p>
+                </div>
+
             </div>
         )
     }

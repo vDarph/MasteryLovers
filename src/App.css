@@ -127,12 +127,20 @@
   z-index: 0;
 }
 
+.championInfo{
+  position: relative;
+  top: -25px;
+}
+
 .championCardInfo{
   font-size: 21px;
 }
 
 .masteryPoints{
-  display: inline;
+  display: inline-block;
+  position: relative;
+  top: -8px;
+  color: #f6c97f;
 }
 
 .masteryPoints_icon{
