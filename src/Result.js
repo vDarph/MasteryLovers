@@ -13,12 +13,12 @@ class Result extends Component{
     }
 
     async componentWillReceiveProps(nextProps){
-        if (nextProps.summonerData.id !== this.props.summonerData.id){
+        if (nextProps.summonerData.id !== this.props.summonerData.id || this.props.summonerData.id !== 'undefined'){
             this.ChampionCardJSX = []
             
             let endPoint = 
                 "https://euw1.api.riotgames.com/lol/champion-mastery/v3/champion-masteries/by-summoner/" 
-                + this.props.summonerData.id 
+                + nextProps.summonerData.id 
                 + "?api_key=" 
                 + this.props.keyCode;
             let fetched = await fetch(endPoint);
@@ -32,13 +32,6 @@ class Result extends Component{
 
     
     render(){
-<<<<<<< HEAD
-        const grisIsLoaded = { 
-            backgroundColor: '#ABC5FF',
-        }
-=======
-
->>>>>>> parent of 937f20a... fix cambio summoner, bug prima ricerca
         let ChampionCardJSX = []
         let personalMasteryData = this.state.masteryData
         
@@ -68,7 +61,6 @@ class Result extends Component{
                     <Masonry
                         elementType={'ul'}
                         className="masonryGrid"
-                        onLayoutComplete={grisIsLoaded}
                     >
                         {ChampionCardJSX}
                     </Masonry>
