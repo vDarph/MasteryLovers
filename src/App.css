@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
   font-family: 'Beaufort for LOL Bold';
   src: local('Beaufort for LOL Bold') url(./Assets/Fonts/Beaufort-Bold.ttf) format('truetype');
@@ -8,6 +9,8 @@
   src: local('GillSansMTPro-Book') url(./Assets/Fonts/GillSansMTPro-Book.otf) format('opentype');
 }
 
+=======
+>>>>>>> parent of 937f20a... fix cambio summoner, bug prima ricerca
 * {
   box-sizing: border-box;
   margin: 0;
@@ -90,22 +93,10 @@
   text-align: center;
 }
 
-.profileInfo_name{
-  font-family: 'Beaufort for LOL Bold';
-  text-align: center;
-  font-size: 32px;
-  color: #f6c97f;
-}
-
 .profileIconContainer{
   margin: 0 auto;
   width: 125px;
   margin-bottom: 50px;
-}
-
-.championCardInfo{
-  position: relative;
-  top: -15px;
 }
 
 .levelStyle{
@@ -125,6 +116,7 @@
   z-index: 0;
 }
 
+<<<<<<< HEAD
 .masteryPoints_icon{
   background-image: url(./Assets/Img/masteryIcon.png);
   display: inline-block;
@@ -154,6 +146,10 @@
     padding:20px;
   }
 
+=======
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {  
+>>>>>>> parent of 937f20a... fix cambio summoner, bug prima ricerca
   .summoners{
     padding-top: 15px;
   }
